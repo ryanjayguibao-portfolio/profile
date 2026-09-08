@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awilo — Creative Portfolio</title>
+    <title>Galactic Portfolio — Awilo Edition</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -13,148 +13,197 @@
 </head>
 <body>
 
-    <!-- MAIN WRAPPER -->
-    <div class="awilo-app">
+    <!-- STARFIELD BACKGROUND EFFECT -->
+    <div class="starfield">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="nebula-glow"></div>
+    </div>
 
-        <!-- HEADER / SIDEBAR -->
-        <header class="awilo-header">
-            <div class="logo-box">
-                <a href="#"><h2>AWILO<span>.</span></h2></a>
-            </div>
+    <!-- FIXED TOP NAVBAR -->
+    <header class="galactic-header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-meteor"></i></span>
+                AWILO<span>.GAL</span>
+            </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-social">
+            <div class="nav-cta">
+                <a href="#contact" class="galactic-btn-sm">Launch Project</a>
+            </div>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN SCROLLABLE CONTAINER -->
+    <main class="galactic-main">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="galactic-section">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="badge-pill">
+                        <i class="fa-solid fa-satellite-dish"></i> Deep Space Explorer & Creator
+                    </div>
+                    <h1>Navigating the <span class="gradient-text">Digital Cosmos</span></h1>
+                    <p>Building hyper-immersive web applications, cinematic user interfaces, and stellar digital experiences across the galaxy.</p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="galactic-btn primary">Explore Works <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#about" class="galactic-btn secondary">Transmission <i class="fa-solid fa-radio"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="orbit-container">
+                        <div class="planet central-planet">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="orbit orbit-1">
+                            <div class="satellite"><i class="fa-solid fa-code"></i></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="satellite"><i class="fa-solid fa-palette"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="galactic-section">
+            <div class="section-header">
+                <span class="section-tag">// 01. INTEL</span>
+                <h2>Stellar Profile & Core Systems</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-panel">
+                    <h3>About The Mission</h3>
+                    <p>Operating from coordinates unknown, I am an independent creative developer specializing in high-performance frontend engineering and cinematic digital architecture.</p>
+                    <p>By blending precision metrics with deep aesthetic layouts, every project is built to pierce through the noisy digital atmosphere.</p>
+                    <div class="specs-list">
+                        <div><strong>Base Sector:</strong> New York / Orbit</div>
+                        <div><strong>Specialization:</strong> UI/UX & Web Dev</div>
+                        <div><strong>System Status:</strong> Ready for Deployment</div>
+                    </div>
+                </div>
+                <div class="skills-card glass-panel">
+                    <h3>Module Proficiencies</h3>
+                    <div class="skill-group">
+                        <div class="skill-info">
+                            <span>Frontend Architecture</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="cosmic-progress"><div class="progress-fill" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-info">
+                            <span>UI/UX & Galactic Design</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="cosmic-progress"><div class="progress-fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-info">
+                            <span>Performance Optimization</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="cosmic-progress"><div class="progress-fill" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="galactic-section">
+            <div class="section-header">
+                <span class="section-tag">// 02. ARCHIVE</span>
+                <h2>Explored Sectors & Artifacts</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card glass-panel">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Nebula UI">
+                        <span class="tag-badge">UI/UX</span>
+                    </div>
+                    <div class="card-details">
+                        <h3>Nebula Analytics Dashboard</h3>
+                        <p>A zero-latency deep space data visualization interface built for real-time tracking.</p>
+                        <a href="#" class="card-link">Initialize View <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card glass-panel">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80" alt="Quantum Saas">
+                        <span class="tag-badge">Saas</span>
+                    </div>
+                    <div class="card-details">
+                        <h3>Quantum SaaS Core</h3>
+                        <p>Minimalist futuristic cloud infrastructure software layout designed with extreme precision.</p>
+                        <a href="#" class="card-link">Initialize View <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card glass-panel">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Cyber Grid">
+                        <span class="tag-badge">Development</span>
+                    </div>
+                    <div class="card-details">
+                        <h3>Cyber Grid Matrix</h3>
+                        <p>Interactive immersive portfolio experience incorporating procedural WebGL visual elements.</p>
+                        <a href="#" class="card-link">Initialize View <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="galactic-section">
+            <div class="section-header">
+                <span class="section-tag">// 03. COMMUNICATIONS</span>
+                <h2>Establish Transmission</h2>
+            </div>
+            <div class="contact-wrapper glass-panel">
+                <form id="galactic-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Commander Name</label>
+                            <input type="text" placeholder="Enter callsign or name..." required>
+                        </div>
+                        <div class="input-group">
+                            <label>Secure Frequency (Email)</label>
+                            <input type="email" placeholder="name@domain.space" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Payload Message</label>
+                        <textarea placeholder="State your mission parameters..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="galactic-btn primary full-width">Transmit Data <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="galactic-footer">
+            <p>&copy; 2026 AWILO.GAL. All systems nominal.</p>
+            <div class="social-orbits">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-behance"></i></a>
                 <a href="#"><i class="fa-brands fa-dribbble"></i></a>
             </div>
-            <div class="mobile-menu-toggler">
-                <span></span>
-                <span></span>
-            </div>
-        </header>
+        </footer>
 
-        <!-- CONTENT CONTAINER -->
-        <main class="awilo-content">
-
-            <!-- HOME SECTION -->
-            <section id="home" class="awilo-section active-section">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <span class="subtitle">Creative UI/UX Designer & Developer</span>
-                        <h1>Hello, I'm <span class="highlight">Alex Morgan</span></h1>
-                        <p>I craft high-performing, elegant, and user-centric digital experiences for modern brands and startups.</p>
-                        <div class="hero-btns">
-                            <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                            <a href="#contact" class="btn-outline">Let's Talk</a>
-                        </div>
-                    </div>
-                    <div class="hero-img">
-                        <div class="img-box">
-                            <!-- Placeholder image -->
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Alex Morgan">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ABOUT SECTION -->
-            <section id="about" class="awilo-section">
-                <div class="section-title">
-                    <h2>About Me</h2>
-                    <p>Get to know me better</p>
-                </div>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h3>Passionate Creator Focused on Minimalist Design</h3>
-                        <p>Hello there! I'm an independent creative developer based in New York. I specialize in web design, interactive development, and branding.</p>
-                        <p>My goal is to translate your business values and requirements into innovative digital solutions that stand out.</p>
-                        <div class="personal-info">
-                            <p><strong>Phone:</strong> +1 (800) 123-4567</p>
-                            <p><strong>Email:</strong> hello@awiloportfolio.com</p>
-                            <p><strong>Freelance:</strong> Available</p>
-                        </div>
-                    </div>
-                    <div class="skills-box">
-                        <h3>My Skills</h3>
-                        <div class="skill-item">
-                            <span>Web Design</span>
-                            <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Frontend Development</span>
-                            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>UI/UX Architecture</span>
-                            <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PORTFOLIO SECTION -->
-            <section id="portfolio" class="awilo-section">
-                <div class="section-title">
-                    <h2>Portfolio</h2>
-                    <p>Recent Projects</p>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Project 1">
-                        <div class="portfolio-info">
-                            <span>Branding</span>
-                            <h3>Metrics Dashboard</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Project 2">
-                        <div class="portfolio-info">
-                            <span>Web Design</span>
-                            <h3>Saas Application</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Project 3">
-                        <div class="portfolio-info">
-                            <span>Creative Agency</span>
-                            <h3>Studio Portfolio</h3>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CONTACT SECTION -->
-            <section id="contact" class="awilo-section">
-                <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>Let's work together</p>
-                </div>
-                <div class="contact-wrapper">
-                    <form id="contact-form">
-                        <div class="input-group">
-                            <input type="text" placeholder="Full Name" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="input-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </section>
-
-        </main>
-    </div>
+    </main>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
