@@ -313,14 +313,11 @@ body {
     transform: scale(1.15);
 }
 
-/* Satellite positioning across orbits */
 .sat-1 { top: -19px; left: calc(50% - 19px); }
 .sat-2 { bottom: -19px; left: calc(50% - 19px); }
-
 .sat-3 { top: 40px; left: -19px; }
 .sat-4 { bottom: 40px; right: -19px; }
 .sat-5 { top: 40px; right: -19px; }
-
 .sat-6 { top: 80px; left: -19px; }
 .sat-7 { bottom: 80px; right: -19px; }
 .sat-8 { bottom: 10px; left: 80px; }
@@ -435,7 +432,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
 }
 
-/* Floating HUD Side Cards */
 .floating-hud {
     position: absolute;
     width: 290px;
@@ -505,7 +501,6 @@ body {
     background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
 }
 
-/* Extended About Grid */
 .about-grid-extended {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -732,7 +727,7 @@ body {
     gap: 3px;
 }
 
-/* Slick slider custom arrow styling */
+/* Slick Slider Custom Styles */
 .slick-prev, .slick-next {
     z-index: 10;
     width: 40px;
@@ -842,7 +837,6 @@ body {
     text-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* Mobile Toggle Hidden */
 .mobile-toggle {
     display: none;
     cursor: pointer;
