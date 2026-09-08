@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awilo — Creative Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MAIN WRAPPER -->
+    <div class="awilo-app">
+
+        <!-- HEADER / SIDEBAR -->
+        <header class="awilo-header">
+            <div class="logo-box">
+                <a href="#"><h2>AWILO<span>.</span></h2></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-social">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+            <div class="mobile-menu-toggler">
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- CONTENT CONTAINER -->
+        <main class="awilo-content">
+
+            <!-- HOME SECTION -->
+            <section id="home" class="awilo-section active-section">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <span class="subtitle">Creative UI/UX Designer & Developer</span>
+                        <h1>Hello, I'm <span class="highlight">Alex Morgan</span></h1>
+                        <p>I craft high-performing, elegant, and user-centric digital experiences for modern brands and startups.</p>
+                        <div class="hero-btns">
+                            <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                            <a href="#contact" class="btn-outline">Let's Talk</a>
+                        </div>
+                    </div>
+                    <div class="hero-img">
+                        <div class="img-box">
+                            <!-- Placeholder image -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Alex Morgan">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT SECTION -->
+            <section id="about" class="awilo-section">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p>Get to know me better</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Passionate Creator Focused on Minimalist Design</h3>
+                        <p>Hello there! I'm an independent creative developer based in New York. I specialize in web design, interactive development, and branding.</p>
+                        <p>My goal is to translate your business values and requirements into innovative digital solutions that stand out.</p>
+                        <div class="personal-info">
+                            <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+                            <p><strong>Email:</strong> hello@awiloportfolio.com</p>
+                            <p><strong>Freelance:</strong> Available</p>
+                        </div>
+                    </div>
+                    <div class="skills-box">
+                        <h3>My Skills</h3>
+                        <div class="skill-item">
+                            <span>Web Design</span>
+                            <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Frontend Development</span>
+                            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>UI/UX Architecture</span>
+                            <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTFOLIO SECTION -->
+            <section id="portfolio" class="awilo-section">
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    <p>Recent Projects</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Project 1">
+                        <div class="portfolio-info">
+                            <span>Branding</span>
+                            <h3>Metrics Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Project 2">
+                        <div class="portfolio-info">
+                            <span>Web Design</span>
+                            <h3>Saas Application</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Project 3">
+                        <div class="portfolio-info">
+                            <span>Creative Agency</span>
+                            <h3>Studio Portfolio</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="awilo-section">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Let's work together</p>
+                </div>
+                <div class="contact-wrapper">
+                    <form id="contact-form">
+                        <div class="input-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
