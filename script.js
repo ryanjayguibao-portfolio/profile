@@ -37,7 +37,7 @@ $(document).ready(function() {
     // Contact Form Submission Simulation
     $('#galactic-form').on('submit', function(e) {
         e.preventDefault();
-        alert('Transmission successful! Your payload has been sent across the galaxy.');
+        alert('Transmission successful! Your message has been beamed across the galaxy.');
         this.reset();
     });
 
