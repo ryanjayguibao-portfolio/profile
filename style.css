@@ -95,7 +95,7 @@ body {
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-link {
@@ -235,7 +235,7 @@ body {
     justify-content: center;
 }
 
-/* --- HERO VISUAL ORBIT --- */
+/* --- MULTI-ORBIT HERO VISUAL --- */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -244,53 +244,57 @@ body {
 
 .orbit-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 380px;
+    height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .central-planet {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #1e1b4b, #311042);
     border: 2px solid var(--neon-purple);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 42px;
+    font-size: 38px;
     color: var(--neon-cyan);
     box-shadow: 0 0 40px rgba(157, 78, 221, 0.4);
     animation: pulseGlow 4s infinite alternate;
+    z-index: 5;
 }
 
 .orbit {
     position: absolute;
-    border: 1px dashed rgba(157, 78, 221, 0.3);
+    border: 1px dashed rgba(157, 78, 221, 0.25);
     border-radius: 50%;
 }
 
 .orbit-1 {
-    width: 200px;
-    height: 200px;
-    animation: rotateOrbit 18s linear infinite;
+    width: 180px;
+    height: 180px;
+    animation: rotateOrbit 16s linear infinite;
 }
 
 .orbit-2 {
-    width: 300px;
-    height: 300px;
-    animation: rotateOrbitReverse 25s linear infinite;
+    width: 280px;
+    height: 280px;
+    animation: rotateOrbitReverse 24s linear infinite;
+}
+
+.orbit-3 {
+    width: 380px;
+    height: 380px;
+    animation: rotateOrbit 32s linear infinite;
 }
 
 .satellite {
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     background: var(--space-bg);
     border: 1px solid var(--neon-cyan);
     color: var(--neon-cyan);
@@ -298,9 +302,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+    font-size: 15px;
+    box-shadow: 0 0 12px rgba(0, 245, 212, 0.4);
+    transition: 0.3s;
 }
+
+.satellite:hover {
+    background: var(--neon-cyan);
+    color: var(--space-bg);
+    transform: scale(1.15);
+}
+
+/* Satellite positioning across orbits */
+.sat-1 { top: -19px; left: calc(50% - 19px); }
+.sat-2 { bottom: -19px; left: calc(50% - 19px); }
+
+.sat-3 { top: 40px; left: -19px; }
+.sat-4 { bottom: 40px; right: -19px; }
+.sat-5 { top: 40px; right: -19px; }
+
+.sat-6 { top: 80px; left: -19px; }
+.sat-7 { bottom: 80px; right: -19px; }
+.sat-8 { bottom: 10px; left: 80px; }
 
 @keyframes rotateOrbit {
     from { transform: rotate(0deg); }
@@ -348,7 +371,6 @@ body {
     overflow: hidden;
 }
 
-/* Hero-Style Profile Avatar Layout */
 .hero-profile-container {
     position: relative;
     width: 240px;
@@ -432,13 +454,8 @@ body {
     transform: translateY(-4px);
 }
 
-.hud-left {
-    left: 30px;
-}
-
-.hud-right {
-    right: 30px;
-}
+.hud-left { left: 30px; }
+.hud-right { right: 30px; }
 
 .hud-header {
     font-family: 'Orbitron', sans-serif;
@@ -464,7 +481,6 @@ body {
     font-weight: 500;
 }
 
-/* HUD Skills List */
 .hud-skill-item {
     margin-bottom: 10px;
 }
@@ -541,14 +557,56 @@ body {
     box-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* --- PORTFOLIO SECTION --- */
-.portfolio-grid {
+/* --- SERVICES SECTION (6 BOXES MATRIX) --- */
+.services-grid-6 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.portfolio-card {
+.service-box {
+    padding: 35px 25px;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-box:hover {
+    transform: translateY(-6px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 30px rgba(0, 245, 212, 0.25);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 245, 212, 0.1);
+    border: 1px solid rgba(0, 245, 212, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neon-cyan);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-white);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.service-box p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* --- PORTFOLIO SLIDER --- */
+.portfolio-slider .portfolio-card {
+    margin: 0 15px;
     overflow: hidden;
     transition: 0.4s ease;
 }
@@ -623,25 +681,14 @@ body {
     text-shadow: 0 0 8px var(--neon-cyan);
 }
 
-/* --- TESTIMONIALS SECTION --- */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
+/* --- TESTIMONIALS SLIDER --- */
+.testimonials-slider .testimonial-card {
+    margin: 0 15px;
     padding: 35px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: 0.4s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 30px rgba(0, 245, 212, 0.2);
+    min-height: 280px;
 }
 
 .quote-icon {
@@ -683,6 +730,47 @@ body {
     font-size: 12px;
     display: flex;
     gap: 3px;
+}
+
+/* Slick slider custom arrow styling */
+.slick-prev, .slick-next {
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background: rgba(14, 18, 33, 0.9);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background: var(--neon-cyan);
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--neon-cyan);
+    font-size: 14px;
+}
+
+.slick-prev:hover:before, .slick-next:hover:before {
+    color: var(--space-bg);
+}
+
+.slick-prev { left: -20px; }
+.slick-next { right: -20px; }
+.slick-prev:before { content: "\f053"; }
+.slick-next:before { content: "\f054"; }
+
+.slick-dots li button:before {
+    color: var(--neon-cyan);
+    font-size: 8px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--neon-cyan);
+    opacity: 1;
 }
 
 /* --- CONTACT SECTION --- */
@@ -780,9 +868,9 @@ body {
         right: auto;
         width: 100%;
     }
-    .hero-wrapper, .about-grid-extended, .form-row {
+    .hero-wrapper, .about-grid-extended, .form-row, .services-grid-6 {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     .hero-visual {
         order: -1;
@@ -806,7 +894,7 @@ body {
     .main-nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 25px;
     }
     .main-nav ul li a {
         font-size: 18px;
