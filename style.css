@@ -23,7 +23,7 @@ body {
     color: var(--text-main);
     overflow-x: hidden;
     cursor: default;
-    font-size: 16px; /* Base size bumped up for readability */
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -256,7 +256,7 @@ body.cursor-hover .cursor-outline {
     box-shadow: 0 16px 40px rgba(0, 245, 212, 0.2);
 }
 
-/* --- MAIN LAYOUT & SECTIONS (MAX SPACED) --- */
+/* --- MAIN LAYOUT & SECTIONS --- */
 .galactic-main {
     max-width: 1240px;
     margin: 0 auto;
@@ -265,7 +265,7 @@ body.cursor-hover .cursor-outline {
 
 .galactic-section {
     min-height: 90vh;
-    padding: 140px 0 100px 0; /* Substantially increased top & bottom section spacing */
+    padding: 140px 0 100px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -301,7 +301,7 @@ body.cursor-hover .cursor-outline {
 
 .hero-content h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(38px, 5.2vw, 60px); /* Larger headline scaling */
+    font-size: clamp(38px, 5.2vw, 60px);
     font-weight: 700;
     color: var(--text-white);
     line-height: 1.15;
@@ -315,7 +315,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .hero-content p {
-    font-size: 18px; /* Larger body description copy */
+    font-size: 18px;
     line-height: 1.75;
     margin-bottom: 36px;
     max-width: 580px;
@@ -333,10 +333,10 @@ body.cursor-hover .cursor-outline {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    padding: 16px 32px; /* Bigger touch targets & padding */
+    padding: 16px 32px;
     border-radius: 12px;
     font-weight: 600;
-    font-size: 15px; /* Larger button label text */
+    font-size: 15px;
     text-decoration: none;
     transition: 0.3s;
     cursor: pointer;
@@ -491,7 +491,7 @@ body.cursor-hover .cursor-outline {
 
 /* --- SECTION HEADERS --- */
 .section-header {
-    margin-bottom: 45px; /* Increased separation under headers */
+    margin-bottom: 45px;
 }
 
 .section-tag {
@@ -505,7 +505,7 @@ body.cursor-hover .cursor-outline {
 
 .section-header h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(28px, 3.8vw, 42px); /* Larger section titles */
+    font-size: clamp(28px, 3.8vw, 42px);
     color: var(--text-white);
     line-height: 1.25;
 }
@@ -516,7 +516,7 @@ body.cursor-hover .cursor-outline {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 40px; /* Generous internal padding */
+    padding: 60px 40px;
     margin-bottom: 40px;
     overflow: hidden;
 }
@@ -635,12 +635,25 @@ body.cursor-hover .cursor-outline {
     margin-bottom: 12px;
 }
 
-.hud-skill-item span {
-    display: block;
+.hud-skill-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.hud-skill-label span {
     font-size: 12px;
     color: var(--text-white);
-    margin-bottom: 6px;
     font-weight: 600;
+}
+
+/* Counter styles inside HUD */
+.hud-skill-label .counter {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11.5px;
+    color: var(--neon-cyan);
+    font-weight: 700;
 }
 
 .mini-bar {
@@ -661,24 +674,24 @@ body.cursor-hover .cursor-outline {
 .about-grid-extended {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px; /* Expanded grid gap */
+    gap: 40px;
 }
 
 .about-card, .skills-card {
-    padding: 45px; /* Larger internal card padding */
+    padding: 45px;
 }
 
 .about-card h3, .skills-card h3 {
     font-family: 'Orbitron', sans-serif;
     color: var(--text-white);
-    font-size: 20px; /* Larger sub-headers */
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
 .about-card p {
     line-height: 1.8;
     margin-bottom: 20px;
-    font-size: 16.5px; /* Bigger descriptive text */
+    font-size: 16.5px;
 }
 
 .skill-group {
@@ -694,9 +707,17 @@ body.cursor-hover .cursor-outline {
     font-weight: 600;
 }
 
+/* Counter styles inside Technical Proficiency Breakdown */
+.skill-info .counter {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-cyan);
+    font-size: 13px;
+    font-weight: 700;
+}
+
 .cosmic-progress {
     width: 100%;
-    height: 8px; /* Thicker progress indicator bars */
+    height: 8px;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     overflow: hidden;
@@ -714,11 +735,11 @@ body.cursor-hover .cursor-outline {
 .services-grid-6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px; /* Increased grid spacing between service boxes */
+    gap: 32px;
 }
 
 .service-box {
-    padding: 40px 32px; /* Extra internal breathing room */
+    padding: 40px 32px;
     display: flex;
     flex-direction: column;
 }
@@ -752,7 +773,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .service-box p {
-    font-size: 15px; /* Larger body description text */
+    font-size: 15px;
     line-height: 1.75;
 }
 
@@ -764,7 +785,7 @@ body.cursor-hover .cursor-outline {
 
 .card-image {
     position: relative;
-    height: 250px; /* Taller image presentation */
+    height: 250px;
     overflow: hidden;
 }
 
@@ -793,7 +814,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .card-details {
-    padding: 32px; /* Generous text padding inside portfolio cards */
+    padding: 32px;
 }
 
 .card-details h3 {
@@ -827,7 +848,7 @@ body.cursor-hover .cursor-outline {
 /* --- TESTIMONIALS SLIDER --- */
 .testimonials-slider .testimonial-card {
     margin: 0 16px;
-    padding: 40px; /* Extra interior spacing */
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -841,7 +862,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .testimonial-content p {
-    font-size: 17px; /* Larger quote text */
+    font-size: 17px;
     line-height: 1.8;
     color: var(--text-white);
     margin-bottom: 24px;
@@ -906,7 +927,7 @@ body.cursor-hover .cursor-outline {
 .slick-next:before { content: "\f054"; }
 
 .slick-dots {
-    bottom: -45px; /* Pushed further down for breathing room */
+    bottom: -45px;
 }
 
 .slick-dots li button:before {
@@ -916,13 +937,13 @@ body.cursor-hover .cursor-outline {
 
 /* --- CONTACT SECTION --- */
 .contact-wrapper {
-    padding: 60px; /* Maximized contact form padding */
+    padding: 60px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px; /* Wider gap between form fields */
+    gap: 25px;
 }
 
 .input-group {
@@ -941,12 +962,12 @@ body.cursor-hover .cursor-outline {
 .input-group input, 
 .input-group textarea {
     width: 100%;
-    padding: 16px 20px; /* Larger input box sizing */
+    padding: 16px 20px;
     background: rgba(3, 4, 11, 0.65);
     border: 1px solid var(--panel-border);
     border-radius: 12px;
     color: var(--text-white);
-    font-size: 15px; /* Larger form entry text */
+    font-size: 15px;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -959,7 +980,7 @@ body.cursor-hover .cursor-outline {
 
 /* --- FOOTER --- */
 .galactic-footer {
-    padding: 45px 0; /* Expanded footer spacing */
+    padding: 45px 0;
     border-top: 1px solid var(--panel-border);
     display: flex;
     justify-content: space-between;
