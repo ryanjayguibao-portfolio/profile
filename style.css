@@ -9,13 +9,13 @@
 
 :root {
     --space-bg: #03040b;
-    --panel-bg: rgba(14, 18, 33, 0.6);
-    --panel-border: rgba(120, 119, 198, 0.15);
+    --panel-bg: rgba(14, 18, 33, 0.7);
+    --panel-border: rgba(120, 119, 198, 0.2);
     --neon-purple: #9d4edd;
     --neon-cyan: #00f5d4;
     --text-main: #94a3b8;
     --text-white: #f8fafc;
-    --glow-shadow: 0 0 25px rgba(157, 78, 221, 0.2);
+    --glow-shadow: 0 0 30px rgba(157, 78, 221, 0.25);
 }
 
 body {
@@ -84,6 +84,7 @@ body {
 
 .logo-icon {
     color: var(--neon-cyan);
+    font-size: 22px;
     animation: pulseGlow 3s infinite;
 }
 
@@ -94,7 +95,7 @@ body {
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 .nav-link {
@@ -159,7 +160,7 @@ body {
 
 .hero-content h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 700;
     color: var(--text-white);
     line-height: 1.15;
@@ -234,7 +235,7 @@ body {
     justify-content: center;
 }
 
-/* --- HERO VISUAL / ORBIT ANIMATION --- */
+/* --- HERO VISUAL ORBIT --- */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -243,23 +244,23 @@ body {
 
 .orbit-container {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .central-planet {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     background: linear-gradient(135deg, #1e1b4b, #311042);
     border: 2px solid var(--neon-purple);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 42px;
     color: var(--neon-cyan);
     box-shadow: 0 0 40px rgba(157, 78, 221, 0.4);
     animation: pulseGlow 4s infinite alternate;
@@ -272,14 +273,14 @@ body {
 }
 
 .orbit-1 {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     animation: rotateOrbit 18s linear infinite;
 }
 
 .orbit-2 {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     animation: rotateOrbitReverse 25s linear infinite;
 }
 
@@ -318,7 +319,7 @@ body {
 
 /* --- SECTION HEADERS --- */
 .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .section-tag {
@@ -332,60 +333,189 @@ body {
 
 .section-header h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     color: var(--text-white);
 }
 
-/* --- ABOUT SECTION --- */
-.about-grid {
+/* --- PROFILE HUD LAYOUT (ABOUT SECTION) --- */
+.profile-hud-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+/* Profile Avatar Style */
+.profile-avatar-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-glow-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--neon-cyan), var(--neon-purple), transparent, var(--neon-cyan));
+    animation: rotateOrbit 10s linear infinite;
+    filter: blur(8px);
+    opacity: 0.7;
+}
+
+.avatar-frame {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.4);
+    z-index: 2;
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.profile-avatar-container:hover .avatar-frame img {
+    transform: scale(1.08);
+}
+
+.floating-badge-bottom {
+    position: absolute;
+    bottom: -15px;
+    background: rgba(3, 4, 11, 0.9);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 5;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+}
+
+/* Floating HUD Side Cards */
+.floating-hud {
+    position: absolute;
+    width: 290px;
+    background: rgba(14, 18, 33, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.floating-hud:hover {
+    border-color: var(--neon-cyan);
+    transform: translateY(-4px);
+}
+
+.hud-left {
+    left: 30px;
+}
+
+.hud-right {
+    right: 30px;
+}
+
+.hud-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: var(--neon-cyan);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 8px;
+}
+
+.hud-body p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+.hud-body p strong {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* HUD Skills List */
+.hud-skill-item {
+    margin-bottom: 10px;
+}
+
+.hud-skill-item span {
+    display: block;
+    font-size: 12px;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+.mini-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.mini-bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+}
+
+/* Extended About Grid */
+.about-grid-extended {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 30px;
 }
 
 .about-card, .skills-card {
-    padding: 40px;
+    padding: 35px;
 }
 
 .about-card h3, .skills-card h3 {
     font-family: 'Orbitron', sans-serif;
     color: var(--text-white);
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 .about-card p {
     line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.specs-list {
-    margin-top: 25px;
-    border-top: 1px solid var(--panel-border);
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.specs-list div {
+    margin-bottom: 15px;
     font-size: 14px;
 }
 
-.specs-list strong {
-    color: var(--text-white);
-}
-
 .skill-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .skill-info {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-white);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
@@ -486,6 +616,68 @@ body {
     text-shadow: 0 0 8px var(--neon-cyan);
 }
 
+/* --- TESTIMONIALS SECTION --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 30px rgba(0, 245, 212, 0.2);
+}
+
+.quote-icon {
+    color: var(--neon-cyan);
+    font-size: 24px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.testimonial-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-white);
+    margin-bottom: 25px;
+}
+
+.client-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--panel-border);
+    padding-top: 20px;
+}
+
+.client-info h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: var(--text-white);
+    margin-bottom: 3px;
+}
+
+.client-info span {
+    font-size: 12px;
+    color: var(--text-main);
+}
+
+.rating-stars {
+    color: #facc15;
+    font-size: 12px;
+    display: flex;
+    gap: 3px;
+}
+
 /* --- CONTACT SECTION --- */
 .contact-wrapper {
     padding: 50px;
@@ -570,8 +762,18 @@ body {
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
-@media(max-width: 992px) {
-    .hero-wrapper, .about-grid, .form-row {
+@media(max-width: 1024px) {
+    .profile-hud-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .floating-hud {
+        position: relative;
+        left: auto;
+        right: auto;
+        width: 100%;
+    }
+    .hero-wrapper, .about-grid-extended, .form-row {
         grid-template-columns: 1fr;
         gap: 40px;
     }
