@@ -130,28 +130,31 @@ body.cursor-hover .cursor-outline {
     100% { transform: translateX(-600px) translateY(600px) rotate(-45deg); opacity: 0; }
 }
 
-/* --- SCROLL REVEAL UTILITY CLASSES --- */
-.reveal-up {
+/* --- SCROLL REVEAL UTILITY CLASSES (WITH FALLBACK) --- */
+.reveal-up, .reveal-left, .reveal-right {
+    opacity: 1; /* Fallback: visible by default so content never stays hidden */
+    transform: translate(0, 0);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-enabled .reveal-up {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-left {
+.js-enabled .reveal-left {
     opacity: 0;
     transform: translateX(-30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-right {
+.js-enabled .reveal-right {
     opacity: 0;
     transform: translateX(30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-active {
-    opacity: 1;
-    transform: translate(0, 0);
+.js-enabled .reveal-active {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
 }
 
 /* --- FIXED TOP NAVBAR --- */
@@ -485,7 +488,7 @@ body.cursor-hover .cursor-outline {
 
 /* --- SECTION HEADERS --- */
 .section-header {
-    margin-bottom: 18px; /* Tighter gap below section titles */
+    margin-bottom: 18px;
 }
 
 .section-tag {
@@ -510,7 +513,7 @@ body.cursor-hover .cursor-outline {
     justify-content: center;
     align-items: center;
     padding: 25px 20px;
-    margin-bottom: 20px; /* Reduced gap */
+    margin-bottom: 20px;
     overflow: hidden;
 }
 
@@ -653,11 +656,11 @@ body.cursor-hover .cursor-outline {
 .about-grid-extended {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 20px; /* Tighter gap between cards */
+    gap: 20px;
 }
 
 .about-card, .skills-card {
-    padding: 24px; /* Reduced internal padding */
+    padding: 24px;
 }
 
 .about-card h3, .skills-card h3 {
@@ -706,11 +709,11 @@ body.cursor-hover .cursor-outline {
 .services-grid-6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Tighter grid gaps */
+    gap: 15px;
 }
 
 .service-box {
-    padding: 22px 18px; /* Compact box padding */
+    padding: 22px 18px;
     display: flex;
     flex-direction: column;
 }
@@ -904,7 +907,7 @@ body.cursor-hover .cursor-outline {
 
 /* --- CONTACT SECTION --- */
 .contact-wrapper {
-    padding: 30px; /* Compact padding */
+    padding: 30px;
 }
 
 .form-row {
@@ -914,7 +917,7 @@ body.cursor-hover .cursor-outline {
 }
 
 .input-group {
-    margin-bottom: 14px; /* Tighter gap between fields */
+    margin-bottom: 14px;
 }
 
 .input-group label {
