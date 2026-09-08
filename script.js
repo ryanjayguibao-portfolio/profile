@@ -1,12 +1,94 @@
 $(window).on('load', function() {
 
-    // Smooth Scrolling & Navigation Highlighting via Scroll Position
+    // --- CUSTOM INTERACTIVE CURSOR ---
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (window.innerWidth > 1024) {
+        window.addEventListener('mousemove', function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
+            cursorOutline.style.transform = `translate(${posX - 18}px, ${posY - 18}px)`;
+        });
+
+        // Interactive hover scaling for interactive elements
+        $('a, button, .service-box, .portfolio-card, input, textarea').on('mouseenter', function() {
+            $('body').addClass('cursor-hover');
+        }).on('mouseleave', function() {
+            $('body').removeClass('cursor-hover');
+        });
+    }
+
+    // --- INTERSECTION OBSERVER SCROLL REVEALS ---
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.12
+    };
+
+    const scrollObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('reveal-active');
+
+                // Trigger Progress Bars and Counters if inside viewport
+                if ($(entry.target).find('.progress-fill, .fill').length > 0) {
+                    animateProgressBars();
+                }
+                if ($(entry.target).find('.counter').length > 0) {
+                    animateCounters();
+                }
+            }
+        });
+    }, observerOptions);
+
+    $('.reveal-up, .reveal-left, .reveal-right').each(function() {
+        scrollObserver.observe(this);
+    });
+
+    // --- PROGRESS BAR FILL ANIMATION ---
+    let progressAnimated = false;
+    function animateProgressBars() {
+        if (progressAnimated) return;
+        progressAnimated = true;
+
+        $('.progress-fill, .mini-bar .fill').each(function() {
+            var targetWidth = $(this).attr('data-width') || $(this).css('width');
+            $(this).css('width', targetWidth + '%');
+        });
+    }
+
+    // --- NUMBER COUNTER ANIMATION ---
+    let countersAnimated = false;
+    function animateCounters() {
+        if (countersAnimated) return;
+        countersAnimated = true;
+
+        $('.counter').each(function() {
+            var $this = $(this);
+            var target = parseInt($this.attr('data-target'));
+            
+            $({ countNum: 0 }).animate({ countNum: target }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function() {
+                    $this.text(Math.floor(this.countNum) + '%');
+                },
+                complete: function() {
+                    $this.text(this.countNum + '%');
+                }
+            });
+        });
+    }
+
+    // --- SMOOTH SCROLL & ACTIVE NAVBAR HIGHLIGHTING ---
     $(window).on('scroll', function() {
         var scrollPos = $(window).scrollTop();
 
-        // Highlight active navbar link on scroll
         $('.galactic-section').each(function() {
-            var top = $(this).offset().top - 150;
+            var top = $(this).offset().top - 120;
             var bottom = top + $(this).outerHeight();
             var id = $(this).attr('id');
 
@@ -16,25 +98,30 @@ $(window).on('load', function() {
             }
         });
 
-        // Add subtle header shadow on scroll
-        if (scrollPos > 50) {
-            $('.galactic-header').css('box-shadow', '0 10px 30px rgba(0,0,0,0.5)');
+        // Header shadow intensity on scroll
+        if (scrollPos > 40) {
+            $('.galactic-header').css({
+                'box-shadow': '0 8px 25px rgba(0,0,0,0.5)',
+                'background': 'rgba(3, 4, 11, 0.95)'
+            });
         } else {
-            $('.galactic-header').css('box-shadow', 'none');
+            $('.galactic-header').css({
+                'box-shadow': 'none',
+                'background': 'rgba(3, 4, 11, 0.85)'
+            });
         }
     });
 
-    // Mobile Navigation Menu Toggle
+    // --- MOBILE NAVIGATION TOGGLE ---
     $('.mobile-toggle').on('click', function() {
         $('.main-nav').toggleClass('open');
     });
 
-    // Close mobile menu when clicking a link
     $('.main-nav a').on('click', function() {
         $('.main-nav').removeClass('open');
     });
 
-    // Initialize Portfolio Slider with robust responsive breakpoints
+    // --- INITIALIZE PORTFOLIO SLIDER ---
     if ($('.portfolio-slider').length) {
         $('.portfolio-slider').slick({
             infinite: true,
@@ -62,7 +149,7 @@ $(window).on('load', function() {
         });
     }
 
-    // Initialize Testimonials Slider with responsive breakpoints
+    // --- INITIALIZE TESTIMONIALS SLIDER ---
     if ($('.testimonials-slider').length) {
         $('.testimonials-slider').slick({
             infinite: true,
@@ -84,12 +171,12 @@ $(window).on('load', function() {
         });
     }
 
-    // Force Slick sliders to recalculate width metrics on resize / device rotation
+    // Recalculate slick slider layouts on resize
     $(window).on('resize', function() {
         $('.portfolio-slider, .testimonials-slider').slick('setPosition');
     });
 
-    // Contact Form Submission Simulation
+    // --- CONTACT FORM SUBMISSION SIMULATION ---
     $('#galactic-form').on('submit', function(e) {
         e.preventDefault();
         alert('Transmission successful! Your message has been beamed across the galaxy.');
